@@ -1,0 +1,62 @@
+
+nav #toggler {
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 2;
+    cursor:pointer;
+    width:60px;
+    height:60px;
+    opacity: 0;
+}
+nav .hamburger {
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 1;
+    width : 60px;
+    height:60px;
+    padding :1rem;
+    background-color:var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border:1px solid wheat; */
+}
+/* hamburger Line */
+nav .hamburger > div{
+    position : relative;
+    flex:none;
+    width:100%;
+    height: 3px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+/* Hamberger Lines -> top and bottom */
+nav .hamburger > div:after,
+nav .hamburger > div:before{
+    content:'';
+    position: absolute;;
+    top : -8px;
+    width:100%;
+    height:3px;
+    background-color:inherit;
+}
+nav .hamburger > div:after{
+    top : 8px;
+}
+nav #toggler:checked + .hamburger > div{
+    transform:rotate(135deg);
+}
+nav #toggler:checked + .hamburger > div::after,
+nav #toggler:checked + .hamburger > div::before{
+    top:0;
+    transform:rotate(90deg);
+}
+nav #toggler:checked:hover + .hamburger > div{
+    transform: rotate(315deg);
+}
